@@ -4,12 +4,12 @@ from functions_api import  edge_followed_by_count , post_likes_count,post_commen
 app = Flask(__name__)
 
 # this is allowed ips
-allowed_ips = ["162.159.140.98","172.66.0.96"]
+allowed_ips = ["162.159.140.98", "172.66.0.96", "2606:4700:7::60", "2a06:98c1:58::60"]
 
 @app.before_request
 def check_security():
     client_ip = request.remote_addr
-
+    print(f"client_ip : {client_ip}")
     if not client_ip in allowed_ips:
         return jsonify({"error": "Unauthorized access"}), 401 
 
