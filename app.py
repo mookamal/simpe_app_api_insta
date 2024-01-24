@@ -3,7 +3,8 @@ from functions_api import  edge_followed_by_count , post_likes_count,post_commen
 
 app = Flask(__name__)
 
-allowed_ips = ["127.1.1.1"]
+# this is allowed ips
+allowed_ips = ["162.159.140.98","172.66.0.96"]
 
 @app.before_request
 def check_security():
